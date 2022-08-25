@@ -13,22 +13,19 @@ bn \end{pmatrix}$$
 
 Lets take the gradient of the second term
 
-$$ \bigtriangledown_x \left(x^TAx\right) \=
-\begin{pmatrix} \sum_{i=1}^n \left(a_{1i\:}x_i\right)+\sum \:_{i=1}^n\left(a_{i1\:}x_i\right)\\
-...\\
-\sum \:_{i=1}^n\left(a_{ni}\:x_i\right)+\sum \:\:_{i=1}^n\left(a_{n1\:}x_i\right)\end{pmatrix} $$
+$$ \bigtriangledown_x \left(x^TAx\right) \= $$
+
+ ![image](IMG_1378.jpg)
  
- therefore
+For the sake of clarity for this assignment, the solution in the picture above will be noted as G
+
+Therefore
  
  $$ \bigtriangledown_xf(x) \= \bigtriangledown_x \left( b^Tx + x^TAx\right) \= \begin{pmatrix}
 b1\\
 b2\\ 
 ...\\
-bn \end{pmatrix}
-+\begin{pmatrix}\sum _{i=1}^n\left(a_{1i\:}x_i\right)+\sum \:_{i=1}^n\left(a_{i1\:}x_i\right)\\
-...\\
-\sum \:_{i=1}^n\left(a_{ni}\:x_i\right)+\sum \:\:_{i=1}^n\left(a_{n1\:}x_i\right)\end{pmatrix} $$
-$$
+bn \end{pmatrix} + G $$
 
 
 ## Part B
@@ -40,15 +37,13 @@ because the derivative of a constant = 0
 
 then for the second part 
 
-$$ H(\begin{pmatrix}\sum _{i=1}^n\left(a_{1i\:}x_i\right)+\sum \:_{i=1}^n\left(a_{i1\:}x_i\right)\\
-...\\
-\sum \:_{i=1}^n\left(a_{ni}\:x_i\right)+\sum \:\:_{i=1}^n\left(a_{n1\:}x_i\right)\end{pmatrix})
+$$ H( G )
    \= \begin{pmatrix}a_{11}&a_{21}+a_{12}&...&a_{1n}+a_{n1}\\
 a_{21}+a_{12}&a_{22}&...&a_{2n}+a_{n2}\\
 ...&...&...&\\
 a_{1n}+a_{n1}&a_{2n}+a_{n2}&&a_{nn}\end{pmatrix}$$
 
-therefore,
+Therefore,
 
 $$H(f(x)) \= \begin{pmatrix}a_{11}&a_{21}+a_{12}&...&a_{1n}+a_{n1}\\
 a_{21}+a_{12}&a_{22}&...&a_{2n}+a_{n2}\\
@@ -91,4 +86,8 @@ S.T.:
 $$ \sum_{i=1}^N a_{ij} x_i \geq b_j  $$ 
 
 for all j = 1, 2, ... , M
+
+and
+
+$$ x \geq 0 $$
 
