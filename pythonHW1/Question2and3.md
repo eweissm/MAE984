@@ -92,3 +92,7 @@ $$ \sum_{i=1}^N a_{ij} x_i \geq b_j  $$
 
 for all j = 1, 2, ... , M
 
+and
+
+$$ x \geq 0 $$
+
