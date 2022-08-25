@@ -14,7 +14,7 @@ bn \end{pmatrix}$$
 Lets take the gradient of the second term
 
 $$ \bigtriangledown_x \left(x^TAx\right) \=
-\begin{pmatrix}\sum _{i=1}^n\left(a_{1i\:}x_i\right)+\sum \:_{i=1}^n\left(a_{i1\:}x_i\right)\\
+\begin{pmatrix} \sum_{i=1}^n \left(a_{1i\:}x_i\right)+\sum \:_{i=1}^n\left(a_{i1\:}x_i\right)\\
 ...\\
 \sum \:_{i=1}^n\left(a_{ni}\:x_i\right)+\sum \:\:_{i=1}^n\left(a_{n1\:}x_i\right)\end{pmatrix} $$
  
@@ -44,9 +44,16 @@ $$ H(\begin{pmatrix}\sum _{i=1}^n\left(a_{1i\:}x_i\right)+\sum \:_{i=1}^n\left(a
 ...\\
 \sum \:_{i=1}^n\left(a_{ni}\:x_i\right)+\sum \:\:_{i=1}^n\left(a_{n1\:}x_i\right)\end{pmatrix})
    \= \begin{pmatrix}a_{11}&a_{21}+a_{12}&...&a_{1n}+a_{n1}\\
-a_{21}+a_{12}&a_{22}&&\\
-...&&...&\\
-a_{1n}+a_{n1}&&&a_{nn}\end{pmatrix}$$
+a_{21}+a_{12}&a_{22}&...&a_{2n}+a_{n2}\\
+...&...&...&\\
+a_{1n}+a_{n1}&a_{2n}+a_{n2}&&a_{nn}\end{pmatrix}$$
+
+therefore,
+
+$$H(f(x)) \= \begin{pmatrix}a_{11}&a_{21}+a_{12}&...&a_{1n}+a_{n1}\\
+a_{21}+a_{12}&a_{22}&...&a_{2n}+a_{n2}\\
+...&...&...&\\
+a_{1n}+a_{n1}&a_{2n}+a_{n2}&&a_{nn}\end{pmatrix}$$
 
 ## Part C
 ALL eigen values must be positive
