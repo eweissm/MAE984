@@ -11,4 +11,13 @@ cnst = [{'type': 'eq', 'fun': lambda x: (x[0] + 3. * x[1])},
 
 res = minimize(eqn, x0, method='SLSQP', bounds=bnds, constraints=cnst)
 
-print(res)
+xOpt = res.x
+print(xOpt)
+print('contraint 1 = ')
+print(xOpt[0] + 3. * xOpt[1])
+print('contraint 2 = ')
+print(xOpt[2] + xOpt[3] - 2. * xOpt[4])
+print('contraint 3 = ')
+print(xOpt[1] - xOpt[4])
+print('function = ')
+print((xOpt[0] - xOpt[1]) ** 2 + (xOpt[1] + xOpt[2] - 2) ** 2 + (xOpt[3] - 1) ** 2 + (xOpt[4] - 1) ** 2)
