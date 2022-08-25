@@ -28,7 +28,7 @@ print(xOpt[1] - xOpt[4])
 print('function = ')
 print((xOpt[0] - xOpt[1]) ** 2 + (xOpt[1] + xOpt[2] - 2) ** 2 + (xOpt[3] - 1) ** 2 + (xOpt[4] - 1) ** 2)
 
-#### initial conditions all = 5
+## initial conditions all = 5
 print('all ICs = 5:')
 x0 = np.array([5., 5., 5., 5., 5.])
 
