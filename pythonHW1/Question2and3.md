@@ -5,14 +5,49 @@ $$ \bigtriangledown_xf(x) \= \bigtriangledown_x \left( b^Tx + x^TAx\right)$$
 
 Lets take the gradient of the first term
 
-$$ \bigtriangledown_x b^Tx \= b^T \=  \begin{pmatrix}b1\\ b2 \\ ...\\ bn\end{pmatrix}^T $$
+$$ \bigtriangledown_x b^Tx \= b^T \=  \begin{pmatrix}
+b1\\
+b2\\ 
+...\\
+bn \end{pmatrix}$$
 
 Lets take the gradient of the second term
 
-$$ \bigtriangledown_x \left(x^TAx\right) \= \begin{bmatrix} \sum _{i=1}^n a_{i1}x_i + \sum\_{i=1}^n \left(a_{1i}x_i \right) && ...&& \sum_{i=1}^n \left(a_{ni}x_i\right) + \sum_{i=1}^n \left(a_{in}x_i \right) \end{bmatrix}^T $$
+$$ \bigtriangledown_x \left(x^TAx\right) \=
+\begin{pmatrix}\sum _{i=1}^n\left(a_{1i\:}x_i\right)+\sum \:_{i=1}^n\left(a_{i1\:}x_i\right)\\
+...\\
+\sum \:_{i=1}^n\left(a_{ni}\:x_i\right)+\sum \:\:_{i=1}^n\left(a_{n1\:}x_i\right)\end{pmatrix} $$
  
+ therefore
+ 
+ $$ \bigtriangledown_xf(x) \= \bigtriangledown_x \left( b^Tx + x^TAx\right) \= \begin{pmatrix}
+b1\\
+b2\\ 
+...\\
+bn \end{pmatrix}
++\begin{pmatrix}\sum _{i=1}^n\left(a_{1i\:}x_i\right)+\sum \:_{i=1}^n\left(a_{i1\:}x_i\right)\\
+...\\
+\sum \:_{i=1}^n\left(a_{ni}\:x_i\right)+\sum \:\:_{i=1}^n\left(a_{n1\:}x_i\right)\end{pmatrix} $$
+$$
+
 
 ## Part B
+Similar to Part A, we will first take the hessian of the first term:
+
+$$ H(b^T) = 0 $$
+
+because the derivative of a constant = 0
+
+then for the second part 
+
+$$ H(\begin{pmatrix}\sum _{i=1}^n\left(a_{1i\:}x_i\right)+\sum \:_{i=1}^n\left(a_{i1\:}x_i\right)\\
+...\\
+\sum \:_{i=1}^n\left(a_{ni}\:x_i\right)+\sum \:\:_{i=1}^n\left(a_{n1\:}x_i\right)\end{pmatrix})
+   \= \begin{pmatrix}a_{11}&a_{21}+a_{12}&...&a_{1n}+a_{n1}\\
+a_{21}+a_{12}&a_{22}&&\\
+...&&...&\\
+a_{1n}+a_{n1}&&&a_{nn}\end{pmatrix}$$
+
 ## Part C
 ALL eigen values must be positive
 ## Part D
