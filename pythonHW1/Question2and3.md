@@ -74,7 +74,7 @@ b must be perpendicular to y as seen here:
  
  $$ 0^T x \= y^T b $$
  
-   In order for a column vector multiplied by a row vector to be equal to zero, the 2 vextors must be parrallel to one another.
+   In order for a column vector multiplied by a row vector to be equal to zero, the 2 vextors must be parallel to one another.
 # Question 3
 
 minimize:
