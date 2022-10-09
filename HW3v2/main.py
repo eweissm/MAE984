@@ -34,5 +34,17 @@ for i in range(100):
 
         A.grad.zero_()
 
-print('estimation A12 and A21 is:', A)
-print('final loss is: ', loss.data.numpy())
+print('Regression estimation A12 and A21 is:', A)
+print('Regression final loss is: ', loss.data.numpy())
+
+P_pred = P_pred.detach().numpy()[0]
+P = P.detach().numpy()[0]
+x1 = x1.detach().numpy()[0]
+
+plt.plot(x1,P_pred, label = 'predicted pressure')
+plt.plot(x1,P, label = 'actual pressure')
+plt.xlabel('x1')
+plt.ylabel('pressure')
+plt.legend()
+plt.title('comparison between predicted and actual pressure')
+plt.show()
