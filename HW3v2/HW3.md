@@ -4,8 +4,7 @@
  $$ min_{A12, A21} \sum_{n=1} ^{11}\left(P\left(Xi,A\right)-P_{given}\right)^2$$
  
  Then this is solved using a gradient decent algorithm as is seen in the code. This give us the solution that:
-Regression estimation A12 and A21 is: 1.9110, 1.7293
-Regression final loss is:  0.87836564
+Regression estimation A12 and A21 is: 1.9110, 1.7293, with the regression final loss at:  0.87836564
 
 We can see this  answer is quite acurate when compared to the real data, as shown in the graph
 
