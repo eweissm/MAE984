@@ -41,11 +41,45 @@ P_pred = P_pred.detach().numpy()[0]
 P = P.detach().numpy()[0]
 x1 = x1.detach().numpy()[0]
 
-plt.plot(x1,P_pred, label = 'predicted pressure')
-plt.plot(x1,P, label = 'actual pressure')
+plt.plot(x1, P_pred, label='predicted pressure')
+plt.plot(x1, P, label='actual pressure')
 plt.xlabel('x1')
 plt.ylabel('pressure')
 plt.legend()
 plt.title('comparison between predicted and actual pressure')
 plt.show()
 
+# question 2
+
+
+func = lambda y1, y2: (4 - 2.1 * y1 ** 2 + (y1 ** 4) / 3) * y1 ** 2 + y1 * y2 + (-4 + 4 * y2 ** 2) * y2 ** 2
+
+from hyperopt import hp
+
+
+# Create the domain space
+def para_space():
+    space_paras = {'y1': hp.uniform('y1', -3, 3),
+                   'y2': hp.uniform('y1', -2, 2)
+                   }
+    return space_paras
+
+
+from hyperopt import tpe
+
+# Create the algorithm
+tpe_algo = tpe.suggest
+
+from hyperopt import Trials
+
+# Create a trials object
+tpe_trials = Trials()
+
+from hyperopt import fmin
+
+# Run 2000 evals with the tpe algorithm
+tpe_best = fmin(fn=func, space=para_space,
+                algo=tpe_algo, trials=tpe_trials,
+                max_evals=2000)
+
+print(tpe_best)
