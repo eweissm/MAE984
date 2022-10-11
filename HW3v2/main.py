@@ -52,34 +52,24 @@ plt.show()
 # question 2
 
 
-func = lambda y1, y2: (4 - 2.1 * y1 ** 2 + (y1 ** 4) / 3) * y1 ** 2 + y1 * y2 + (-4 + 4 * y2 ** 2) * y2 ** 2
+# Import HyperOpt Library
+from hyperopt import tpe, hp, fmin
 
-from hyperopt import hp
-
-
-# Create the domain space
-def para_space():
-    space_paras = {'y1': hp.uniform('y1', -3, 3),
-                   'y2': hp.uniform('y1', -2, 2)
-                   }
-    return space_paras
+def objective(params):
+    x, y = params['x'], params['y']
+    return (4-(2.1*x**2)+((x**4)/3))*x**2+(x*y)+(-4+(4*y**2))*y**2
 
 
-from hyperopt import tpe
+# Define the search space of x between -10 and 10.
+space = {
+    'x': hp.uniform('x', -3, 3),
+    'y': hp.uniform('y', -2, 2)
+}
+best = fmin(
+    fn=objective, # Objective Function to optimize
+    space=space, # Hyperparameter's Search Space
+    algo=tpe.suggest, # Optimization algorithm
+    max_evals=1000 # Number of optimization attempts
+)
+print(best)
 
-# Create the algorithm
-tpe_algo = tpe.suggest
-
-from hyperopt import Trials
-
-# Create a trials object
-tpe_trials = Trials()
-
-from hyperopt import fmin
-
-# Run 2000 evals with the tpe algorithm
-tpe_best = fmin(fn=func, space=para_space,
-                algo=tpe_algo, trials=tpe_trials,
-                max_evals=2000)
-
-print(tpe_best)
